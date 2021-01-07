@@ -61,7 +61,6 @@ function quiz (){
         alert('Incorrect...')
         //console.log('Incorrect...')
     }
-        alert ('You sucessfully got ' + points + ' out of 5 points');
     let attempt = 0;
     for(;attempt < 4; attempt++){
         const favNum = 7
@@ -78,33 +77,25 @@ function quiz (){
    }
     if (attempt == 4)
        alert('The correct answer is 7')
-}
-    let correctAnswers = 0 ;
+
     let userCorrect = false ;
-    const favBands = ['my chemical romance', 'green day', 'cold play', 'metallica', 'pantera', 'disturbed'];
-    let guesses = 0 ; 
-    while (guesses < 6){
-        let bandQuestion = prompt('What bands do I like?').toLowerCase();
-        console.log(bandQuestion)}
+    const favBands = ['My Chemical Romance', 'Green Day', 'Cold Play', 'Metallica', 'Pantera', 'Disturbed'];
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label for the label idea
+    outer: for (attempt = 0; attempt < 6 ; attempt++){
+        let bandAnswer = prompt('What bands do I like?').toLowerCase();
+        console.log(bandAnswer)
         for (var i = 0; i < favBands.length; i++){
-            if (bandQuestion === favBands[i]){
+            if (bandAnswer === favBands[i].toLowerCase()){
                  alert('You are right I do enjoy listening to them');
-                guesses = 6 ;
-                correctAnswers = correctAnswers + 1 ;
+                points ++ ;
                 userCorrect = true ;
-                points++;
-                break;
+                break outer;
             }
         }
-        if(guesses !== 6){
             alert('That is not a favorite band...')
-          
-        }
-        guesses++;
-     
-        if (userCorrect === false){
-            alert('Ran out of guesses. I enjoy listening to My Chemical Romance, Green Day, Cold Play, Metallica, Pantera, and Disturbed.')
-
-        }
-    alert ('You scored ' + points + ' out of ' + points);
-      
+    }
+    if (!userCorrect){
+        alert('Ran out of guesses. I enjoy listening to My Chemical Romance, Green Day, Cold Play, Metallica, Pantera, and Disturbed.')
+    }
+    alert ('You scored ' + points + ' out of 7');
+}   
