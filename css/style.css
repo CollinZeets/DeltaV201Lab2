@@ -3,7 +3,7 @@
 body{
     margin: 0 auto;
     width: 1000px;
-    background-color: rgb(78, 101, 124);
+    background-color: rgb(140, 150, 160);
   }
   
   
@@ -27,15 +27,5 @@ body{
     background-color: turquoise;
   }
 
-  p1 {
-    color: antiquewhite;
-  }
-  p2 {
-      color: black
-  }
-p3 {
-    color: tan
-}
-p4 {
-    color:gray
-}
+
+
